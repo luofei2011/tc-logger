@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title tcwise日志平台
+        link(rel='stylesheet', href='http://cq01-ps-dev186.cq01.baidu.com:8200/demo/search/css/bootstrap.min.css')
+    body
+        .container-fluid
+            .table-responsive
+                table.table
+                    thead
+                        tr
+                            th time
+                            th idc
+                            th host
+                            th file
+                            th line
+                            th offset
+                            th error
+                            th description
+                    tbody
+                    -for (var i in items)
+                        -var item = items[i]
+                        tr
+                        -for (var o in item)
+                            -var tmp = item[o]
+                            -if (o !== 'id' && o !== 'insert_time')
+                                td #{tmp}
+        
